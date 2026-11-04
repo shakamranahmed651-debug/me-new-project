@@ -15,7 +15,7 @@ export function CheckoutForm({
 }: {
   user: { name: string; email: string; phone: string };
 }) {
-  const { items, ready, subtotal, clear } = useCart();
+  const { items, ready, subtotal } = useCart();
   const [state, formAction, pending] = useActionState(placeOrderAction, initial);
   const router = useRouter();
 
@@ -33,10 +33,7 @@ export function CheckoutForm({
 
   return (
     <form
-      action={(formData) => {
-        clear();
-        formAction(formData);
-      }}
+      action={formAction}
       className="grid gap-9 lg:grid-cols-[1.35fr_0.9fr] lg:gap-12"
     >
       <input
