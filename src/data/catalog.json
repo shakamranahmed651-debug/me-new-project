@@ -1,0 +1,377 @@
+{
+  "categories": [
+    {
+      "slug": "earrings",
+      "name": "Earrings",
+      "tagline": "Everyday light, evening lustre"
+    },
+    {
+      "slug": "churi",
+      "name": "Churi",
+      "tagline": "Hand-finished bangles in warm gold"
+    },
+    {
+      "slug": "jumka",
+      "name": "Jumka",
+      "tagline": "Heritage chandeliers for celebration"
+    },
+    {
+      "slug": "gungur",
+      "name": "Gungur",
+      "tagline": "A whisper of bells at every step"
+    },
+    {
+      "slug": "necklace",
+      "name": "Necklace",
+      "tagline": "Sculpted lines for the décolletage"
+    },
+    {
+      "slug": "chocolate",
+      "name": "Chocolate",
+      "tagline": "Small-batch gifting, beautifully boxed"
+    },
+    {
+      "slug": "jewelry-sets",
+      "name": "Jewelry Sets",
+      "tagline": "Complete looks, thoughtfully paired"
+    }
+  ],
+  "products": [
+    {
+      "slug": "gilded-drop-earrings",
+      "name": "Gilded Drop Earrings",
+      "category": "Earrings",
+      "price": 2450,
+      "compareAtPrice": 2900,
+      "description": "A slender gold drop that catches the light with every turn. Hand-polished brass with a soft champagne finish and a featherweight feel for all-day wear.",
+      "material": "18k gold-plated brass, freshwater pearl accents",
+      "stock": 24,
+      "featured": true,
+      "art": "drop"
+    },
+    {
+      "slug": "pearl-petal-studs",
+      "name": "Pearl Petal Studs",
+      "category": "Earrings",
+      "price": 1750,
+      "compareAtPrice": null,
+      "description": "Five ivory petals arranged around a single luminous pearl. A quiet, sculptural stud that moves easily from morning meetings to late dinners.",
+      "material": "Gold-plated brass, shell pearl",
+      "stock": 32,
+      "featured": true,
+      "art": "petal"
+    },
+    {
+      "slug": "champagne-hoop-earrings",
+      "name": "Champagne Hoop Earrings",
+      "category": "Earrings",
+      "price": 1950,
+      "compareAtPrice": 2300,
+      "description": "An everyday hoop refined to a whisper-thin profile, brushed in champagne gold. Light enough to forget you are wearing them.",
+      "material": "Champagne gold-plated sterling silver",
+      "stock": 40,
+      "featured": false,
+      "art": "hoop"
+    },
+    {
+      "slug": "ivory-tassel-earrings",
+      "name": "Ivory Tassel Earrings",
+      "category": "Earrings",
+      "price": 2650,
+      "compareAtPrice": null,
+      "description": "Hand-knotted ivory silk tassels suspended from a fine gold cap. Movement, softness and a little drama for festive evenings.",
+      "material": "Silk thread, gold-plated brass",
+      "stock": 18,
+      "featured": false,
+      "art": "tassel"
+    },
+    {
+      "slug": "meenakari-bangle-set",
+      "name": "Meenakari Bangle Set",
+      "category": "Churi",
+      "price": 4250,
+      "compareAtPrice": 4900,
+      "description": "A set of six slender bangles finished with hand-painted meenakari enamel in ivory and champagne. Stack them all or wear two at a time.",
+      "material": "Enamelled brass, gold plating",
+      "stock": 16,
+      "featured": true,
+      "art": "bangle-set"
+    },
+    {
+      "slug": "champagne-kada",
+      "name": "Champagne Kada",
+      "category": "Churi",
+      "price": 3650,
+      "compareAtPrice": null,
+      "description": "One solid kada with a softly hammered surface and a hidden hinge closure. A statement worn alone, a texture layered with others.",
+      "material": "Hammered gold-plated brass",
+      "stock": 12,
+      "featured": false,
+      "art": "kada"
+    },
+    {
+      "slug": "ivory-resin-churi",
+      "name": "Ivory Resin Churi",
+      "category": "Churi",
+      "price": 1450,
+      "compareAtPrice": null,
+      "description": "Milky ivory resin with a band of gold leaf set inside. Impossibly light, endlessly stackable, and made for warm-weather dressing.",
+      "material": "Hand-cast resin, gold leaf",
+      "stock": 34,
+      "featured": false,
+      "art": "resin"
+    },
+    {
+      "slug": "heirloom-gold-churi",
+      "name": "Heirloom Gold Churi",
+      "category": "Churi",
+      "price": 5250,
+      "compareAtPrice": 5800,
+      "description": "A bridal-weight pair inspired by heirloom Bengali goldwork, with fine filigree along the outer edge. Finished by hand in small batches.",
+      "material": "Gold-plated brass filigree",
+      "stock": 8,
+      "featured": true,
+      "art": "filigree"
+    },
+    {
+      "slug": "heritage-pearl-jumka",
+      "name": "Heritage Pearl Jumka",
+      "category": "Jumka",
+      "price": 4850,
+      "compareAtPrice": 5500,
+      "description": "A classic dome silhouette lined with pearl drops and a delicate pearl fringe. Weighted to sit beautifully, designed to be remembered.",
+      "material": "Gold-plated brass, shell pearls",
+      "stock": 14,
+      "featured": true,
+      "art": "dome"
+    },
+    {
+      "slug": "rosewood-jumka",
+      "name": "Rosewood Jumka",
+      "category": "Jumka",
+      "price": 3950,
+      "compareAtPrice": null,
+      "description": "Carved rosewood discs edged in antique gold, suspended from a slim chain. Earthy, architectural and unexpectedly easy to wear.",
+      "material": "Carved rosewood, antique gold plating",
+      "stock": 20,
+      "featured": false,
+      "art": "rosewood"
+    },
+    {
+      "slug": "kundan-jumka",
+      "name": "Kundan Jumka",
+      "category": "Jumka",
+      "price": 6250,
+      "compareAtPrice": 7200,
+      "description": "Traditional kundan stones set into a scalloped gold frame with pearl tips. Our most requested piece for wedding season.",
+      "material": "Kundan glass stones, gold-plated brass",
+      "stock": 6,
+      "featured": true,
+      "art": "kundan"
+    },
+    {
+      "slug": "antique-ghungroo-jumka",
+      "name": "Antique Ghungroo Jumka",
+      "category": "Jumka",
+      "price": 4450,
+      "compareAtPrice": null,
+      "description": "Tiny ghungroo bells sway beneath an antiqued dome, giving a soft chime with movement. A piece with history in its silhouette.",
+      "material": "Antique gold-plated brass, bells",
+      "stock": 11,
+      "featured": false,
+      "art": "bells"
+    },
+    {
+      "slug": "bell-charm-gungur",
+      "name": "Bell Charm Gungur",
+      "category": "Gungur",
+      "price": 2250,
+      "compareAtPrice": null,
+      "description": "A band of small bells on a fine gold chain — the lightest way to bring sound into an outfit. Clasp adjustable to two lengths.",
+      "material": "Gold-plated brass, cotton cord",
+      "stock": 28,
+      "featured": false,
+      "art": "chain-bells"
+    },
+    {
+      "slug": "vintage-gungur-set",
+      "name": "Vintage Gungur Set",
+      "category": "Gungur",
+      "price": 3350,
+      "compareAtPrice": 3800,
+      "description": "Two gungur bands in graduated sizes with a softly aged finish. Worn at the wrist or ankle, they layer beautifully.",
+      "material": "Aged brass, hand-strung beads",
+      "stock": 22,
+      "featured": true,
+      "art": "gungur-set"
+    },
+    {
+      "slug": "pearl-gungur",
+      "name": "Pearl Gungur",
+      "category": "Gungur",
+      "price": 2750,
+      "compareAtPrice": null,
+      "description": "Tiny pearls alternated with gold bells on a silk cord. Delicate in scale but generous in detail — a quiet heirloom.",
+      "material": "Freshwater pearls, silk cord",
+      "stock": 17,
+      "featured": false,
+      "art": "pearl-gungur"
+    },
+    {
+      "slug": "noir-gungur",
+      "name": "Noir Gungur",
+      "category": "Gungur",
+      "price": 2450,
+      "compareAtPrice": null,
+      "description": "Black onyx beads with brushed gold bells for a more modern, tonal look. Pairs beautifully with monochrome dressing.",
+      "material": "Onyx beads, gold-plated brass",
+      "stock": 0,
+      "featured": false,
+      "art": "noir"
+    },
+    {
+      "slug": "champagne-lariat-necklace",
+      "name": "Champagne Lariat Necklace",
+      "category": "Necklace",
+      "price": 4650,
+      "compareAtPrice": 5200,
+      "description": "Two fine chains that fall at uneven lengths, finished with a single baroque pearl. Adjustable, effortless, endlessly flattering.",
+      "material": "Gold-plated brass, baroque pearl",
+      "stock": 19,
+      "featured": true,
+      "art": "lariat"
+    },
+    {
+      "slug": "pearl-cascade-necklace",
+      "name": "Pearl Cascade Necklace",
+      "category": "Necklace",
+      "price": 6850,
+      "compareAtPrice": null,
+      "description": "Graduated ivory pearls that fall in a soft cascade along the collarbone. A bridal piece that photographs as beautifully as it feels.",
+      "material": "Freshwater pearls, gold clasp",
+      "stock": 9,
+      "featured": true,
+      "art": "cascade"
+    },
+    {
+      "slug": "ivory-choker",
+      "name": "Ivory Choker",
+      "category": "Necklace",
+      "price": 3250,
+      "compareAtPrice": null,
+      "description": "A sculpted gold band wrapped in ivory enamel, sitting close to the throat. Minimal, architectural, and made for open necklines.",
+      "material": "Enamelled brass, gold plating",
+      "stock": 23,
+      "featured": false,
+      "art": "choker"
+    },
+    {
+      "slug": "heirloom-pendant-necklace",
+      "name": "Heirloom Pendant Necklace",
+      "category": "Necklace",
+      "price": 5450,
+      "compareAtPrice": 6100,
+      "description": "A hand-engraved pendant on a fine cable chain, inspired by antique Bengali jewellery boxes. Engraving available on request.",
+      "material": "Gold-plated brass, hand engraving",
+      "stock": 13,
+      "featured": false,
+      "art": "pendant"
+    },
+    {
+      "slug": "artisan-chocolate-box",
+      "name": "Artisan Chocolate Box",
+      "category": "Chocolate",
+      "price": 1850,
+      "compareAtPrice": null,
+      "description": "Twelve small-batch bonbons in dark, milk and champagne flavours, arranged in our signature ivory box. A gift that arrives ready to give.",
+      "material": "Cocoa, cream, roasted nuts — 12 pieces",
+      "stock": 40,
+      "featured": true,
+      "art": "chocolate-box"
+    },
+    {
+      "slug": "velvet-truffle-collection",
+      "name": "Velvet Truffle Collection",
+      "category": "Chocolate",
+      "price": 2350,
+      "compareAtPrice": 2700,
+      "description": "Sixteen truffles dusted in cocoa and gold, with centres of salted caramel and pistachio praline. Keep cool, share slowly.",
+      "material": "Dark chocolate, caramel, pistachio",
+      "stock": 26,
+      "featured": false,
+      "art": "truffle"
+    },
+    {
+      "slug": "date-and-nut-chocolate-slab",
+      "name": "Date & Nut Chocolate Slab",
+      "category": "Chocolate",
+      "price": 1250,
+      "compareAtPrice": null,
+      "description": "A hand-broken slab of 70% dark chocolate studded with Medjool dates, almonds and a little sea salt. Wrapped in matte paper and tied with gold cord.",
+      "material": "70% dark chocolate, dates, almonds",
+      "stock": 35,
+      "featured": false,
+      "art": "slab"
+    },
+    {
+      "slug": "signature-gift-hamper",
+      "name": "Signature Gift Hamper",
+      "category": "Chocolate",
+      "price": 4850,
+      "compareAtPrice": 5400,
+      "description": "Chocolate, a small jewellery piece and a hand-written card in a reusable ivory keepsake box. Our most gifted set of the season.",
+      "material": "Chocolate selection, gold-plated earrings",
+      "stock": 15,
+      "featured": true,
+      "art": "hamper"
+    },
+    {
+      "slug": "bridal-ivory-set",
+      "name": "Bridal Ivory Set",
+      "category": "Jewelry Sets",
+      "price": 12500,
+      "compareAtPrice": 14500,
+      "description": "Necklace, jumka and churi in a matched ivory-and-gold finish, designed for the bridal wardrobe. Presented in a lined keepsake case.",
+      "material": "Gold-plated brass, shell pearls, enamel",
+      "stock": 5,
+      "featured": true,
+      "art": "bridal"
+    },
+    {
+      "slug": "champagne-celebration-set",
+      "name": "Champagne Celebration Set",
+      "category": "Jewelry Sets",
+      "price": 8950,
+      "compareAtPrice": null,
+      "description": "Lariat necklace with matching drop earrings in a soft champagne finish. Everything you need for an evening, nothing you don't.",
+      "material": "Champagne gold-plated brass, pearl",
+      "stock": 10,
+      "featured": true,
+      "art": "celebration"
+    },
+    {
+      "slug": "heritage-jumka-churi-set",
+      "name": "Heritage Jumka & Churi Set",
+      "category": "Jewelry Sets",
+      "price": 9950,
+      "compareAtPrice": 11200,
+      "description": "Pearl jumka paired with a filigree churi stack, finished in the same antique gold tone. A festive pairing made to be handed down.",
+      "material": "Antique gold-plated brass, pearls",
+      "stock": 7,
+      "featured": false,
+      "art": "heritage-set"
+    },
+    {
+      "slug": "minimal-daily-set",
+      "name": "Minimal Daily Set",
+      "category": "Jewelry Sets",
+      "price": 4250,
+      "compareAtPrice": null,
+      "description": "Petite studs, a fine chain and one slim bangle — the three pieces our team reaches for every morning. Made to be lived in.",
+      "material": "Gold-plated sterling silver",
+      "stock": 30,
+      "featured": false,
+      "art": "minimal-set"
+    }
+  ]
+}
