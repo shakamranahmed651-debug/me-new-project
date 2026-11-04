@@ -56,6 +56,11 @@ export async function createUser(input: {
   return usingSupabase() ? supa.supaCreateUser(input) : sqlite.sqliteCreateUser(input);
 }
 
+export async function countUsers(): Promise<number> {
+  if (usingSupabase()) return supa.supaCountUsers();
+  return sqlite.sqliteCountUsers();
+}
+
 export async function findUserByEmail(email: string) {
   return usingSupabase() ? supa.supaFindUserByEmail(email) : sqlite.sqliteFindUserByEmail(email);
 }
