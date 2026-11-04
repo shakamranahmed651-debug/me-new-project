@@ -418,6 +418,11 @@ export async function sqliteGetUserById(id: string) {
   return row ? mapUser(row) : null;
 }
 
+export async function sqliteCountUsers(): Promise<number> {
+  const db = await getDb();
+  return Number(first(db, 'SELECT COUNT(*) AS n FROM users')?.n ?? 0);
+}
+
 export async function sqliteSetUserRole(id: string, role: Role) {
   const db = await getDb();
   run(db, 'UPDATE users SET role = ? WHERE id = ?', [role, id]);
