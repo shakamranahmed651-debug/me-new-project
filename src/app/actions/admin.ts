@@ -104,13 +104,15 @@ export async function deleteProductAction(formData: FormData): Promise<void> {
   const denied = await guard();
   if (denied) return;
   const id = text(formData, 'id');
+  let failed = false;
   if (id) {
     try {
       await deleteProduct(id);
     } catch {
-      redirect('/admin/products?error=delete');
+      failed = true;
     }
   }
+  if (failed) redirect('/admin/products?error=delete');
   revalidatePath('/admin/products');
   revalidatePath('/shop');
   revalidatePath('/');
