@@ -138,7 +138,12 @@ function seedAdmin(db: Database) {
 
 async function loadDatabase(): Promise<Database> {
   const wasmPath = path.join(path.dirname(require.resolve('sql.js/package.json')), 'dist/sql-wasm.wasm');
-  const SQL = await initSqlJs({ wasmBinary: fs.readFileSync(wasmPath) });
+  const wasmFile = fs.readFileSync(wasmPath);
+  const wasmBinary = wasmFile.buffer.slice(
+    wasmFile.byteOffset,
+    wasmFile.byteOffset + wasmFile.byteLength,
+  ) as ArrayBuffer;
+  const SQL = await initSqlJs({ wasmBinary });
   fs.mkdirSync(dataDir, { recursive: true });
 
   let db: Database;
