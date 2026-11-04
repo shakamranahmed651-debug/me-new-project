@@ -8,8 +8,10 @@ export function ClearCart({ orderNumber }: { orderNumber: string }) {
   const { clear } = useCart();
 
   useEffect(() => {
-    clear(orderNumber);
-  }, [clear, orderNumber]);
+    clear();
+    // Clear only once per confirmed order number.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderNumber]);
 
   return null;
 }
