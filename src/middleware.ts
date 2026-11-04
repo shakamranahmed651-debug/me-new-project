@@ -1,15 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { SESSION_COOKIE } from '@/lib/session';
+import { SESSION_COOKIE } from '@/lib/cookies';
 
-/**
- * Refreshes the Supabase auth cookie when Supabase is configured, and applies
- * baseline security headers. Local sessions are signed and verified server-side.
- */
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
-
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
   if (url && anonKey) {
     const { createServerClient } = await import('@supabase/ssr');
     const supabase = createServerClient(url, anonKey, {
@@ -18,9 +14,7 @@ export async function middleware(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          for (const { name, value } of cookiesToSet) {
-            request.cookies.set(name, value);
-          }
+          for (const { name, value } of cookiesToSet) request.cookies.set(name, value);
           response = NextResponse.next({ request });
           for (const { name, value, options } of cookiesToSet) {
             response.cookies.set(name, value, options);
@@ -31,7 +25,7 @@ export async function middleware(request: NextRequest) {
     try {
       await supabase.auth.getUser();
     } catch {
-      // Network failure should not break the storefront.
+      // A network hiccup must not take the storefront down.
     }
   }
 
@@ -40,12 +34,12 @@ export async function middleware(request: NextRequest) {
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
 
-  // Cookie-presence guard for admin pages; full role verification happens on the server page.
+  // Cheap cookie gate for admin URLs. The role check still happens on the server page.
   if (request.nextUrl.pathname.startsWith('/admin')) {
     const hasLocal = Boolean(request.cookies.get(SESSION_COOKIE)?.value);
     const hasSupabase = request.cookies
       .getAll()
-      .some((cookie) => cookie.name.startsWith('sb-') && cookie.name.endsWith('-auth-token'));
+      .some((cookie) => cookie.name.startsWith('sb-') && cookie.name.includes('-auth-token'));
     if (!hasLocal && !hasSupabase) {
       const loginUrl = new URL('/login', request.url);
       loginUrl.searchParams.set('next', request.nextUrl.pathname);
@@ -57,5 +51,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|webp|ico)$).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|webp|ico|woff2?)$).*)'],
 };

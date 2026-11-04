@@ -1,8 +1,5 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
-import crypto from 'node:crypto';
-
-const COOKIE_NAME = 'wz_session';
-const MAX_AGE = 60 * 60 * 24 * 30;
+import { SESSION_COOKIE, SESSION_MAX_AGE } from '@/lib/cookies';
 
 export interface SessionPayload {
   uid: string;
@@ -15,15 +12,11 @@ export interface SessionPayload {
 function secret(): string {
   const value = process.env.SESSION_SECRET;
   if (value && value.length >= 16) return value;
-  // Local development fallback: deterministic per-process secret, never used in production
-  // because deployments must set SESSION_SECRET.
-  if (process.env.NODE_ENV === 'production') {
-    if (!value) {
-      return process.env.SUPABASE_SERVICE_ROLE_KEY ?? 'waran-zone-fallback-session-key-change-me';
-    }
-    return value;
-  }
-  return process.env.SUPABASE_SERVICE_ROLE_KEY || 'waran-zone-local-development-secret';
+  // Never bake a real secret into the repo. Deployments must provide SESSION_SECRET;
+  // this derived fallback only keeps local/offline runs working.
+  return createHmac('sha256', process.env.SUPABASE_SERVICE_ROLE_KEY ?? 'waran-zone')
+    .update('waran-zone-session-v1')
+    .digest('hex');
 }
 
 function sign(data: string): string {
@@ -31,7 +24,7 @@ function sign(data: string): string {
 }
 
 export function encodeSession(payload: Omit<SessionPayload, 'exp'>): string {
-  const full: SessionPayload = { ...payload, exp: Date.now() + MAX_AGE * 1000 };
+  const full: SessionPayload = { ...payload, exp: Date.now() + SESSION_MAX_AGE * 1000 };
   const body = Buffer.from(JSON.stringify(full)).toString('base64url');
   return `${body}.${sign(body)}`;
 }
@@ -41,21 +34,16 @@ export function decodeSession(token: string | undefined): SessionPayload | null 
   const [body, signature] = token.split('.');
   if (!body || !signature) return null;
   const expected = sign(body);
-  const a = Buffer.from(signature);
-  const b = Buffer.from(expected);
-  if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
+  const given = Buffer.from(signature);
+  const wanted = Buffer.from(expected);
+  if (given.length !== wanted.length || !timingSafeEqual(given, wanted)) return null;
   try {
     const payload = JSON.parse(Buffer.from(body, 'base64url').toString()) as SessionPayload;
-    if (!payload?.uid || payload.exp < Date.now()) return null;
+    if (!payload?.uid || typeof payload.exp !== 'number' || payload.exp < Date.now()) return null;
     return payload;
   } catch {
     return null;
   }
 }
 
-export const SESSION_COOKIE = COOKIE_NAME;
-export const SESSION_MAX_AGE = MAX_AGE;
-
-export function randomToken(): string {
-  return crypto.randomBytes(24).toString('base64url');
-}
+export { SESSION_COOKIE, SESSION_MAX_AGE };
