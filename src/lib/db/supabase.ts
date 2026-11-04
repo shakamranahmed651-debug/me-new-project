@@ -199,6 +199,15 @@ export async function supaGetProfile(id: string) {
   return user;
 }
 
+export async function supaCountUsers(): Promise<number> {
+  const supabase = createSupabaseAdmin();
+  const { count, error } = await supabase
+    .from('profiles')
+    .select('id', { count: 'exact', head: true });
+  if (error) throw new Error(error.message);
+  return count ?? 0;
+}
+
 export async function supaSetUserRole(id: string, role: Role) {
   const supabase = createSupabaseAdmin();
   const { error } = await supabase.from('profiles').update({ role }).eq('id', id);
